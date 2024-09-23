@@ -1,10 +1,11 @@
-const { Pool } = require('pg');
+// import { Pool } from "pg";
+const { Pool } = require("pg");
 
 const pool = new Pool({
-  user: 'shopvoyageuser',
-  host: 'localhost',
-  database: 'ShopVoyagedatabase',
-  password: '123456',
+  user: "shopvoyageuser",
+  host: "localhost",
+  database: "ShopVoyagedatabase",
+  password: "password",
   port: 5432, // Default PostgreSQL port
 });
 

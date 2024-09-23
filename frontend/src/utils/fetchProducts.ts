@@ -5,19 +5,21 @@
 //     }
 //     return res.json();
 //   };
-  
+
 export interface Product {
   imageurl: string;
   id: number;
   name: string;
   price: number;
   imageUrl: string;
+  category: string;
+  type: string;
 }
 
 export const fetchProducts = async (): Promise<Product[]> => {
-  const response = await fetch('http://localhost:5001/api/products');
+  const response = await fetch("http://localhost:5001/api/products");
   if (!response.ok) {
-    throw new Error('Failed to fetch products');
+    throw new Error("Failed to fetch products");
   }
   return response.json();
 };

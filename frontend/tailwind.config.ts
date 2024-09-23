@@ -13,8 +13,16 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      // Add your custom screens here
+      screens: {
+        xxl: "1536px",
+        xxxl: "2184px",
+        xxx2l: "2381px",
+        xxxxl: "2730px",
+      },
     },
   },
   plugins: [],
 };
+
 export default config;
