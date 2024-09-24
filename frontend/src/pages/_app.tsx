@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const [productCartimg, setProductCartImg] = useState("");
   const [productCartname, setProductCartName] = useState("");
   const [productCartprice, setProductCartPrice] = useState(0);
-  const [inputValue, setInputValue] = useState(0);
+  const [inputValue, setInputValue] = useState<number>(0);
   const [cartItems, setCartItems] = useState([]);
 
   return (

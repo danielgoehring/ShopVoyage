@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Hero from "../components/Hero";
-import FeaturedItems from "../components/FeaturedItems";
+
 import Offers from "../components/Offers";
-import DiscountOffer from "../components/DiscountOffer";
+
 import Details from "../components/Details";
 import Product1 from "../components/Product1"; // Import Product1 component
 import { fetchProducts1, Products1 } from "../utils/fetchProduct1"; // Import fetchProducts1 function

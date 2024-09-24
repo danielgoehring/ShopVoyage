@@ -1,13 +1,32 @@
 import { useEffect, useState } from "react";
 
+interface CartItem {
+  productCartImg: string;
+  productCartName: string;
+  productCartPrice: number;
+  size: string;
+  inputValue: number;
+}
+
+interface OrderDetails {
+  cartItems: CartItem[];
+  subtotal: number;
+  shippingFee: number;
+  total: number;
+  orderDate: string;
+  status: string;
+}
+
 const Orders = () => {
-  const [orderDetails, setOrderDetails] = useState(null);
+  const [orderDetails, setOrderDetails] = useState<OrderDetails | null>(null);
 
   useEffect(() => {
     // Retrieve the order details from localStorage
-    const storedOrderDetails = JSON.parse(localStorage.getItem("orderDetails"));
+    const storedOrderDetails = localStorage.getItem("orderDetails");
+
     if (storedOrderDetails) {
-      setOrderDetails(storedOrderDetails);
+      const parsedDetails: OrderDetails = JSON.parse(storedOrderDetails);
+      setOrderDetails(parsedDetails);
     }
   }, []);
 
@@ -16,8 +35,8 @@ const Orders = () => {
       <h1 className="text-2xl font-semibold mb-4">MY ORDERS</h1>
       <hr className=" border-gray-300" />
 
-      {orderDetails && orderDetails.cartItems?.length > 0 ? (
-        orderDetails.cartItems.map((item, index) => (
+      {orderDetails && orderDetails.cartItems.length > 0 ? (
+        orderDetails.cartItems.map((item: CartItem, index: number) => (
           <div
             key={index}
             className="flex items-center justify-between border-b border-gray-300 py-4"

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Product1 from "../components/Product1";
 import { fetchProducts1, Products1 } from "../utils/fetchProduct1";
-import DiscountOffer from "../components/DiscountOffer";
+
 import { useRouter } from "next/router";
 
 const Category1 = () => {

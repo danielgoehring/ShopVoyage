@@ -1,4 +1,14 @@
-const CartItem = ({
+interface CartItemProps {
+  productCartImg: string;
+  productCartName: string;
+  productCartPrice: number;
+  size: string;
+  setInputValue: (value: number) => void;
+  inputValue: number;
+  removeItem: () => void;
+}
+
+const CartItem: React.FC<CartItemProps> = ({
   productCartImg,
   productCartName,
   productCartPrice,
@@ -10,11 +20,11 @@ const CartItem = ({
   // Function to handle button click
   const handleButtonClick = () => {
     // Increment the input value by 1 when the button is clicked
-    setInputValue((prevValue) => Math.min(prevValue + 1, 100)); // Ensure it doesn't exceed the max value
+    setInputValue(Math.min(inputValue + 1, 100)); // Ensure it doesn't exceed the max value
   };
 
   // Function to handle manual input change
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(e.target.value, 10);
     // Update the state only if the value is a valid number within the range
     if (!isNaN(value) && value >= 0 && value <= 100) {
@@ -56,7 +66,7 @@ const CartItem = ({
               width="19"
               height="19"
               fill="currentColor"
-              class="bi bi-trash cursor-pointer"
+              className="bi bi-trash cursor-pointer"
               viewBox="0 0 16 16"
               onClick={removeItem}
             >

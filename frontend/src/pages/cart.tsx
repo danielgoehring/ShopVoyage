@@ -1,8 +1,32 @@
+// Define the structure of a single cart item
+interface CartItemType {
+  id: string;
+  productCartImg: string;
+  productCartName: string;
+  productCartPrice: number;
+  size: string;
+  inputValue: number;
+}
+
+// Define the props for the Cart component
+interface CartProps {
+  productCartImg: string;
+  productCartName: string;
+  productCartPrice: number;
+  size: string;
+  setInputValue: (value: number) => void;
+  inputValue: number;
+  cartItems: CartItemType[];
+  setCartItems: React.Dispatch<React.SetStateAction<CartItemType[]>>;
+  setcounter: React.Dispatch<React.SetStateAction<number>>;
+  counter: number;
+}
+
 import CartItem from "../components/CartItem";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
-const Cart = ({
+const Cart: React.FC<CartProps> = ({
   productCartImg,
   productCartName,
   productCartPrice,
@@ -15,7 +39,7 @@ const Cart = ({
   counter,
 }) => {
   console.log(cartItems);
-  const [subtotal, setSubtotal] = useState(0);
+  const [subtotal, setSubtotal] = useState<number>(0);
   const shippingFee = 5.0; // Example fixed shipping fee (you can adjust this)
   const total = subtotal + shippingFee;
 
@@ -30,7 +54,7 @@ const Cart = ({
     setSubtotal(newSubtotal);
   }, [cartItems]);
 
-  const handleRemoveItem = (id) => {
+  const handleRemoveItem = (id: string) => {
     // Filter out the item with the given id
     const updatedCartItems = cartItems.filter((item) => item.id !== id);
     setCartItems(updatedCartItems);
@@ -79,15 +103,6 @@ const Cart = ({
           />
         ))}
       </div>
-
-      {/* <CartItem
-        productCartImg={productCartImg}
-        productCartName={productCartName}
-        productCartPrice={productCartPrice}
-        size={size}
-        setInputValue={setInputValue}
-        inputValue={inputValue}
-      /> */}
 
       <div className="sm:flex justify-end mb-44">
         <div className="sm:w-[500px] w-full">
