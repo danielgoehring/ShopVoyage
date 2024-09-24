@@ -14,7 +14,9 @@ const BASE_URL =
     : "http://localhost:5001"; // Switch based on environment
 
 export const fetchProducts1 = async (): Promise<Products1[]> => {
-  const response = await fetch(`https://shopvoyage.onrender.com/api/products1`);
+  const response = await fetch(
+    `https://shopvoyage-backend.onrender.com/api/products1`
+  );
   if (!response.ok) {
     throw new Error("Failed to fetch products1");
   }
@@ -23,7 +25,7 @@ export const fetchProducts1 = async (): Promise<Products1[]> => {
 
 export const fetchProductById = async (id: number): Promise<Products1> => {
   const response = await fetch(
-    `https://shopvoyage.onrender.com/api/products1/${id}`
+    `https://shopvoyage-backend.onrender.com/api/products1/${id}`
   );
   if (!response.ok) {
     throw new Error("Failed to fetch product");
