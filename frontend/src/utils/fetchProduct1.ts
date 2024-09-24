@@ -15,7 +15,7 @@ const BASE_URL =
 
 export const fetchProducts1 = async (): Promise<Products1[]> => {
   const response = await fetch(
-    `https://shopvoyage-backend.onrender.com/api/products1`
+    "https://shopvoyage-backend.onrender.com/api/products1"
   );
   if (!response.ok) {
     throw new Error("Failed to fetch products1");
