@@ -2,7 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-const Header = ({ counter }) => {
+interface HeaderProps {
+  counter: number; // Define the type for counter
+}
+
+const Header: React.FC<HeaderProps> = ({ counter }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   // const handleCounterClick = () => {
@@ -121,7 +125,7 @@ const Header = ({ counter }) => {
                 width="16"
                 height="16"
                 fill="currentColor"
-                class="bi bi-arrow-left"
+                className="bi bi-arrow-left"
                 viewBox="0 0 16 16"
               >
                 <path
