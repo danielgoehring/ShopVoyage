@@ -19,8 +19,10 @@ const Payment = () => {
 
   useEffect(() => {
     // Retrieve the cart items from localStorage
-    const storedCartItems = JSON.parse(localStorage.getItem("cartItems"));
-    if (storedCartItems) {
+    const storedCartItems = JSON.parse(
+      localStorage.getItem("cartItems") || "[]"
+    );
+    if (storedCartItems.length > 0) {
       localStorage.setItem("cartItems", JSON.stringify(storedCartItems)); // Ensure it's stored in case of refresh
     }
 
@@ -29,15 +31,15 @@ const Payment = () => {
       router.query.shippingFee &&
       router.query.total
     ) {
-      setSubtotal(parseFloat(router.query.subtotal));
-      setShippingFee(parseFloat(router.query.shippingFee));
-      setTotal(parseFloat(router.query.total));
+      setSubtotal(parseFloat(router.query.subtotal as string));
+      setShippingFee(parseFloat(router.query.shippingFee as string));
+      setTotal(parseFloat(router.query.total as string));
     }
   }, [router.query]);
 
   const handlePlaceOrder = () => {
-    // Retrieve cartItems from localStorage
-    const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+    // Retrieve cartItems from localStorage with a fallback to an empty array
+    const cartItems = JSON.parse(localStorage.getItem("cartItems") || "[]");
 
     if (!cartItems || cartItems.length === 0) {
       alert("No items in the cart.");

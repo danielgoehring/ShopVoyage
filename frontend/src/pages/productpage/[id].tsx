@@ -1,10 +1,38 @@
+// Define the structure of a single cart item
+interface CartItemType {
+  id: number;
+  productCartImg: string;
+  productCartName: string;
+  productCartPrice: number;
+  size: string;
+  inputValue: number;
+}
+
+// Define the props for the ProductPage component
+interface ProductPageProps {
+  setcounter: React.Dispatch<React.SetStateAction<number>>;
+  counter: number;
+  setProductCartImg: (img: string) => void;
+  setProductCartName: (name: string) => void;
+  setProductCartPrice: (price: number) => void;
+  setSize: (size: string) => void;
+  size: string;
+  setInputValue: (value: number) => void;
+  inputValue: number;
+  productCartImg: string;
+  productCartName: string;
+  productCartPrice: number;
+  cartItems: CartItemType[];
+  setCartItems: React.Dispatch<React.SetStateAction<CartItemType[]>>;
+}
+
 // pages/productpage/[id].tsx
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Products1 } from "../../utils/fetchProduct1"; // Adjust the import path
 import Image from "next/image";
 
-const ProductPage = ({
+const ProductPage: React.FC<ProductPageProps> = ({
   setcounter,
   counter,
   setProductCartImg,
@@ -89,32 +117,12 @@ const ProductPage = ({
     }, 100); // Remove highlight after 300ms (you can adjust this value)
   };
 
-  // const handleAddtoCart = () => {
-  //   setcounter(counter + 1);
-  //   setProductCartImg(product.imageurl);
-  //   setProductCartName(product.name);
-  //   setProductCartPrice(product.price);
-  //   // Increment the input value by 1 when the button is clicked
-  //   setInputValue((prevValue) => Math.min(prevValue + 1, 100)); // Ensure it doesn't exceed the max value
-  //   const newItem = {
-  //     id: cartItems.length + 1, // Generating a unique id
-  //     productCartImg,
-  //     productCartName,
-  //     productCartPrice,
-  //     size,
-  //     inputValue,
-  //   };
-
-  //   // Add the new item to the cart array
-  //   setCartItems((prevItems) => [...prevItems, newItem]);
-  // };
-
   const handleImg = () => {
-    setProductCartImg(counter + 1);
+    setProductCartImg((counter + 1).toString());
   };
 
   const handleName = () => {
-    setProductCartName(counter + 1);
+    setProductCartName((counter + 1).toString());
   };
 
   const handlePrice = () => {
@@ -345,51 +353,6 @@ const ProductPage = ({
         <hr className="border-t-1 border-gray-300 " />
       </div> */}
     </div>
-
-    // <div>
-    //   <div className="w-full w-[1476px] mb-10">
-    //     <hr className="border-t-1 border-gray-300 " />
-    //   </div>
-    //   <div className="mobile-productpage">
-    //     <div className="mobile-img-flex">
-    //       <img
-    //         className="product-img"
-    //         src={`/${product.imageurl}`}
-    //         alt={product.name}
-    //         style={{
-    //           width: "100%",
-    //           height: "auto",
-    //         }}
-    //       />
-
-    //       <div className="flex mt-3 gap-2 secondary-img-flex">
-    //         {Array(3)
-    //           .fill(0)
-    //           .map((_, index) => (
-    //             <div key={index} className="relative h-1/4">
-    //               <img
-    //                 src={`/${product.imageurl}`}
-    //                 alt={`Thumbnail ${index + 1}`}
-    //                 style={{
-    //                   width: "100%",
-    //                   height: "auto",
-    //                 }}
-    //               />
-    //             </div>
-    //           ))}
-    //       </div>
-    //     </div>
-    //     <div className="mobile-col">
-    //       <h1 className="text-2xl font-bold mt-10">{product.name}</h1>
-    //       <div className="text-2xl font-semibold mb-4">${product.price}</div>
-    //       <div className="mb-6 w-4/5 text-gray-600">{product.category}</div>
-    //       <div className="mb-6 w-4/5 text-gray-600">{product.type}</div>
-    //       <button className="bg-black text-white rounded-sm py-4 px-8 my-8 w-[200px]">
-    //         ADD TO CART
-    //       </button>
-    //     </div>
-    //   </div>
-    // </div>
   );
 };
 
