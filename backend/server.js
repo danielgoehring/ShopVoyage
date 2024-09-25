@@ -3,7 +3,7 @@ const cors = require("cors"); // Import cors
 const pool = require("./config/db");
 const app = express();
 
-app.use(cors()); // Use cors
+app.use(cors({ origin: "https://shopvoyage.onrender.com" })); // Allow requests from your frontend URL
 app.use(express.json());
 
 // Existing endpoint to get products
