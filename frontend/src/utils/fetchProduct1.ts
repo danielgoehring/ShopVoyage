@@ -10,24 +10,10 @@ export interface Products1 {
 }
 
 // Set up the BASE_URL to switch based on environment
-// Define the Products1 interface
-export interface Products1 {
-  imageurl: string;
-  id: number;
-  name: string;
-  price: number;
-  imageUrl: string;
-  category: string;
-  type: string;
-}
-
-// Set up the BASE_URL to switch based on environment
-// Use NEXT_PUBLIC_BASE_URL to allow flexibility when switching between environments
 const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL ||
-  (process.env.NODE_ENV === "production"
+  process.env.NODE_ENV === "production"
     ? "https://shopvoyage-backend.onrender.com"
-    : "http://localhost:5001");
+    : "http://localhost:5001"; // Ensure this is correct based on your environment
 
 // Function to fetch all products
 export const fetchProducts1 = async (): Promise<Products1[]> => {
