@@ -3,8 +3,25 @@ const cors = require("cors"); // Import cors
 const pool = require("./config/db");
 const app = express();
 
-// app.use(cors({ origin: "https://shopvoyage.onrender.com" })); // Use cors
-app.use(cors()); // Use cors
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://shopvoyage.onrender.com",
+];
+
+// app.use(
+//   cors({
+//     origin: function (origin, callback) {
+//       if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+//         callback(null, true);
+//       } else {
+//         callback(new Error("Not allowed by CORS"));
+//       }
+//     },
+//   })
+// );
+
+app.use(cors()); // This allows all origins for testing purposes
+
 app.use(express.json());
 
 // Existing endpoint to get products
@@ -12,6 +29,7 @@ app.get("/api/products", async (req, res) => {
   try {
     const result = await pool.query("SELECT * FROM products");
     console.log("Products from DB:", result.rows);
+
     res.json(result.rows);
   } catch (err) {
     console.error(err);
