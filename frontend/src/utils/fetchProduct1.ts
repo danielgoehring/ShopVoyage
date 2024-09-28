@@ -10,16 +10,18 @@ export interface Products1 {
 }
 
 // Set up the BASE_URL to switch based on environment
-const BASE_URL =
-  process.env.NODE_ENV === "production"
-    ? "https://shopvoyage-backend.onrender.com"
-    : "http://localhost:5001"; // Ensure this is correct based on your environment
+// const BASE_URL =
+//   process.env.NODE_ENV === "production"
+//     ? "https://shopvoyage-backend.onrender.com"
+//     : "http://localhost:5001"; // Ensure this is correct based on your environment
 
 // Function to fetch all products
 export const fetchProducts1 = async (): Promise<Products1[]> => {
   try {
-    console.log(`Fetching all products from ${BASE_URL}/api/products1`);
-    const response = await fetch(`${BASE_URL}/api/products1`);
+    console.log(
+      `Fetching all products from "http://localhost:5001/api/products1"`
+    );
+    const response = await fetch(`"http://localhost:5001/api/products1"`);
     if (!response.ok) {
       throw new Error(`Failed to fetch products1: ${response.status}`);
     }
@@ -33,8 +35,10 @@ export const fetchProducts1 = async (): Promise<Products1[]> => {
 // Function to fetch product by ID
 export const fetchProductById = async (id: number): Promise<Products1> => {
   try {
-    console.log(`Fetching product by ID from ${BASE_URL}/api/products1/${id}`);
-    const response = await fetch(`${BASE_URL}/api/products1/${id}`);
+    console.log(
+      `Fetching product by ID from http://localhost:5001/api/products1/${id}`
+    );
+    const response = await fetch(`http://localhost:5001/api/products1/${id}`);
     if (!response.ok) {
       throw new Error(`Failed to fetch product by ID: ${response.status}`);
     }
