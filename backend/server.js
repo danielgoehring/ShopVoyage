@@ -3,10 +3,10 @@ const cors = require("cors"); // Import cors
 const pool = require("./config/db");
 const app = express();
 
-const allowedOrigins = [
-  "http://localhost:3000",
-  "https://shopvoyage.onrender.com",
-];
+// const allowedOrigins = [
+//   "http://localhost:3000",
+//   "https://shopvoyage.onrender.com",
+// ];
 
 // app.use(
 //   cors({
@@ -20,7 +20,18 @@ const allowedOrigins = [
 //   })
 // );
 
-app.use(cors()); // This allows all origins for testing purposes
+const allowedOrigins = ["https://shopvoyage.onrender.com"];
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+  })
+);
 
 app.use(express.json());
 
