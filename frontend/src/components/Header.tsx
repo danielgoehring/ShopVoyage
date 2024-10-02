@@ -148,7 +148,7 @@ const Header: React.FC<HeaderProps> = ({ counter }) => {
             className="py-2 pl-6 border hover:bg-gray-200"
             href="/category1"
           >
-            COLLECTION
+            COLLECTIONS
           </Link>
           <Link
             onClick={() => setIsVisible(false)}
