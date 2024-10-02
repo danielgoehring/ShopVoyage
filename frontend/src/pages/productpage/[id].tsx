@@ -60,7 +60,7 @@ const ProductPage: React.FC<ProductPageProps> = ({
 
       try {
         const response = await fetch(
-          `http://localhost:5001/api/products1/${id}`
+          `https://shopvoyage-backend.onrender.com/api/products1/${id}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch product");
