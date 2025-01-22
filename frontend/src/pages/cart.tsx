@@ -75,13 +75,13 @@ const Cart: React.FC<CartProps> = ({
 
   console.log(productCartPrice);
   return (
-    <div>
+    <section>
       <div className="w-full w-[1476px] mb-14">
         <hr className="border-t-1 border-gray-200 " />
       </div>
-      <div className="mb-8">
+      <header className="mb-8">
         <h1 className="text-2xl font-semibold">YOUR CART</h1>
-      </div>
+      </header>
       <div>
         {cartItems.map((item) => (
           <CartItem
@@ -138,7 +138,7 @@ const Cart: React.FC<CartProps> = ({
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

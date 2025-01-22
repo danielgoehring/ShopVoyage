@@ -31,8 +31,10 @@ const Orders = () => {
   }, []);
 
   return (
-    <div className="py-6 mb-44">
-      <h1 className="text-2xl font-semibold mb-4">MY ORDERS</h1>
+    <section className="py-6 mb-44">
+      <header>
+        <h1 className="text-2xl font-semibold mb-4">MY ORDERS</h1>
+      </header>
       <hr className=" border-gray-300" />
 
       {orderDetails && orderDetails.cartItems.length > 0 ? (
@@ -86,7 +88,7 @@ const Orders = () => {
       ) : (
         <p>No orders found</p>
       )}
-    </div>
+    </section>
   );
 };
 

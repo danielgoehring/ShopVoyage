@@ -40,7 +40,7 @@ const Home = () => {
   const lastFiveProducts = products.slice(-5);
 
   return (
-    <div>
+    <section>
       <Hero />
 
       {/* FEATURED ITEMS Section */}
@@ -79,36 +79,8 @@ const Home = () => {
       </main>
       <Details />
       <Offers />
-    </div>
+    </section>
   );
 };
 
 export default Home;
-
-// import Hero from "../components/Hero";
-// import FeaturedItems from "../components/FeaturedItems";
-// import Offers from "../components/Offers";
-// import DiscountOffer from "../components/DiscountOffer";
-// import NewCollections from "../components/NewCollections";
-// import Details from "../components/Details";
-// import "../app/globals.css";
-
-// const Home = () => {
-//   return (
-//     <div>
-//       <Hero />
-//       <main className="flex justify-center">
-//         <NewCollections />
-//       </main>
-//       {/* <DiscountOffer /> */}
-//       <main className="flex justify-center">
-//         <FeaturedItems />
-//       </main>
-//       <Details />
-
-//       <Offers />
-//     </div>
-//   );
-// };
-
-// export default Home;

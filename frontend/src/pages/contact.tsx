@@ -2,14 +2,14 @@ import Offers from "../components/Offers";
 
 const Contact = () => {
   return (
-    <div>
+    <section>
       <div className="w-full w-[1476px] mb-8">
         <hr className="border-t-1 border-gray-200 " />
       </div>
 
-      <div className="text-center mb-12">
+      <header className="text-center mb-12">
         <h1 className="text-2xl font-semibold">CONTACT US</h1>
-      </div>
+      </header>
       <div className="mobile-about md:flex-row gap-8 mb-14 md:justify-center items-center">
         <div className="mobile-about-image">
           <img
@@ -39,7 +39,7 @@ const Contact = () => {
       <div className="mt-32">
         <Offers />
       </div>
-    </div>
+    </section>
   );
 };
 

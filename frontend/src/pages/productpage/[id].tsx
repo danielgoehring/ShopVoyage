@@ -160,7 +160,7 @@ const ProductPage: React.FC<ProductPageProps> = ({
   const addItemToCart = () => {};
 
   return (
-    <div className="">
+    <section className="">
       <div className="w-full w-[1476px] mb-10">
         <hr className="border-t-1 border-gray-300 " />
       </div>
@@ -189,7 +189,9 @@ const ProductPage: React.FC<ProductPageProps> = ({
         </div>
 
         <div className="mobile-col">
-          <h1 className="text-2xl font-bold mt-2">{product.name}</h1>
+          <header>
+            <h1 className="text-2xl font-bold mt-2">{product.name}</h1>
+          </header>
           <div className="flex items-center gap-2 mt-2 mb-6">
             <div className="flex gap-1">
               <div>
@@ -352,7 +354,7 @@ const ProductPage: React.FC<ProductPageProps> = ({
       {/* <div className="w-full w-[1476px] my-10">
         <hr className="border-t-1 border-gray-300 " />
       </div> */}
-    </div>
+    </section>
   );
 };
 

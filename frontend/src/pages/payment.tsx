@@ -66,13 +66,13 @@ const Payment = () => {
   };
 
   return (
-    <div className="mb-40">
+    <section className="mb-40">
       <div className="w-full w-[1476px] mb-8">
         <hr className="border-t-1 border-gray-200 " />
       </div>
-      <div className="mb-12">
+      <header className="mb-12">
         <h1 className="text-xl font-semibold">DELIVERY INFORMATION</h1>
-      </div>
+      </header>
       <div className="sm:flex justify-between gap-4 ">
         <div className="sm:w-[500px]">
           <div className="flex mb-4 ">
@@ -205,7 +205,7 @@ const Payment = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

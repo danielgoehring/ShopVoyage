@@ -94,7 +94,7 @@ const Category1 = () => {
   };
 
   return (
-    <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
+    <section className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
       <div className="min-w-60">
         <p
           onClick={() => {
@@ -179,7 +179,7 @@ const Category1 = () => {
       </div>
       {/* Right Side */}
       <div className="flex-1">
-        <div className="flex justify-between text-base sm:text-2xl mb-4">
+        <header className="flex justify-between text-base sm:text-2xl mb-4">
           <h1 className="text-2xl font-semibold">ALL COLLECTIONS</h1>
           {/* Product Sort */}
           <select
@@ -189,14 +189,14 @@ const Category1 = () => {
             <option value="low-high">Sort by: Low to High</option>
             <option value="high-low">Sort by: High to Low</option>
           </select>
-        </div>
+        </header>
 
         {/* Map Products */}
         <div>
           <Product1 products={sortedProducts} />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

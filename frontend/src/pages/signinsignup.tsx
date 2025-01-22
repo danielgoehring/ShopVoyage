@@ -1,6 +1,6 @@
 const SigninSignup = () => {
   return (
-    <div className="flex justify-center pt-20">
+    <section className="flex justify-center pt-20">
       <form className="w-[560px] bg-white rounded-sm">
         <div className="px-8 py-12">
           <h1 className="mb-8 text-3xl font-semibold">Sign Up</h1>
@@ -34,7 +34,7 @@ const SigninSignup = () => {
           </div>
         </div>
       </form>
-    </div>
+    </section>
   );
 };
 
