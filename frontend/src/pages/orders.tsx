@@ -79,7 +79,10 @@ const Orders = () => {
                 </svg>
                 <div>{orderDetails.status}</div>
               </span>
-              <button className="border border-gray-300 px-4 py-2 text-sm">
+              <button
+                id="track-order"
+                className="border border-gray-300 px-4 py-2 text-sm"
+              >
                 Track Order
               </button>
             </div>

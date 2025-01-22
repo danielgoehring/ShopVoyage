@@ -82,6 +82,12 @@ body {
   }
 } */
 
+@media (max-width: 416px) {
+  #track-order {
+    font-size: 8px;
+  }
+}
+
 @media (min-width: 640px) {
   /* .mobile-grid {
     display: grid;
