@@ -22,7 +22,7 @@ const Product1: FC<{
   };
 
   return (
-    <div className="container pt-3 pb-16 m-auto">
+    <section className="container pt-3 pb-16 m-auto">
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {displayedProducts.map((product) => (
           <div
@@ -41,44 +41,8 @@ const Product1: FC<{
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
 export default Product1;
-
-// import { useEffect, useState } from "react";
-// import { fetchProducts1, Products1 } from "../utils/fetchProduct1";
-// import ProductCard from "./ProductCard";
-// import { FC } from "react";
-
-// const Product1: FC<{
-//   products: {
-//     id: number;
-//     name: string;
-//     price: number;
-//     imageurl: string;
-//     category: string;
-//     type: string;
-//   }[];
-// }> = ({ products }) => {
-//   return (
-//     <div className="container pt-3 pb-40 m-auto">
-//       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-//         {products.map((product) => (
-//           <ProductCard
-//             key={product.id}
-//             id={product.id}
-//             name={product.name}
-//             price={product.price}
-//             imageurl={product.imageurl}
-//             category={product.category}
-//             type={product.type}
-//           />
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Product1;

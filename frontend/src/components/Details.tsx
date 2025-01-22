@@ -1,6 +1,6 @@
 const Details = () => {
   return (
-    <div className="flex justify-center mobile-padding mt-10">
+    <section className="flex justify-center mobile-padding mt-10">
       <div className="flex flex-col items-center mobile-details sm:gap-12 md:gap-24 lg:gap-32 xl:gap-48">
         <div className="flex flex-col items-center space-y-1 mb-14">
           <svg
@@ -58,7 +58,7 @@ const Details = () => {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

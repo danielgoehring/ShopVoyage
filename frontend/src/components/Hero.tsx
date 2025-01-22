@@ -27,24 +27,6 @@ const Hero = () => {
         className="w-full sm:w-1/2 sm:h-[260px] md:h-[360px] lg:h-[450px] xl:h-[550px] xxl:h-[650px] xxxl:h-[750px] xxx2l:h-[850px] xxxxl:h-[950px] object-cover "
       />
     </section>
-    // <section className=" m-4 border border-gray-900 mobile-hero">
-    //   <div className="flex justify-center py-8">
-    //     <div className="text-left ">
-    //       <p className="mb-1">OUR BESTSELLERS</p>
-    //       <h1 className="text-3xl mb-2 font-semibold">Step into Style</h1>
-    //       <p className="">SHOP NOW</p>
-    //     </div>
-
-    //     {/* <p className="">Premium Comfort, Unbeatable Value.</p> */}
-    //   </div>
-    //   <div>
-    //     <img
-    //       src="/images/whitesneakers.jpg"
-    //       alt="Hero Image"
-    //       className="h-[360px] w-full object-cover"
-    //     />
-    //   </div>
-    // </section>
   );
 };
 

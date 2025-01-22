@@ -33,7 +33,7 @@ const CartItem: React.FC<CartItemProps> = ({
   };
   // console.log("size: " + size);
   return (
-    <div className="">
+    <section className="">
       <div className="w-full w-[1476px] mb-4">
         <hr className="border-t-1 border-gray-200 " />
       </div>
@@ -79,7 +79,7 @@ const CartItem: React.FC<CartItemProps> = ({
       <div className="w-full w-[1476px]">
         <hr className="border-t-1 border-gray-200 " />
       </div>
-    </div>
+    </section>
   );
 };
 

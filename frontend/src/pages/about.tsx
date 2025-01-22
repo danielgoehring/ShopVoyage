@@ -2,14 +2,14 @@ import Offers from "../components/Offers";
 
 const About = () => {
   return (
-    <div>
+    <section>
       <div className="w-full w-[1476px] mb-8">
         <hr className="border-t-1 border-gray-200 " />
       </div>
 
-      <div className="text-center mb-12">
+      <header className="text-center mb-12">
         <h1 className="text-2xl font-semibold">ABOUT US</h1>
-      </div>
+      </header>
       <div className="mobile-about sm:flex-col lg:flex-row gap-16 mb-14 md:items-center">
         <div>
           <img
@@ -81,7 +81,7 @@ const About = () => {
         </div>
       </div>
       <Offers />
-    </div>
+    </section>
   );
 };
 

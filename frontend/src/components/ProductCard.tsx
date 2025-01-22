@@ -19,7 +19,7 @@ const ProductCard = ({
 }: ProductCardProps) => {
   console.log(imageurl);
   return (
-    <div className="overflow-hidden ">
+    <section className="overflow-hidden ">
       <img
         src={imageurl}
         alt={name}
@@ -34,7 +34,7 @@ const ProductCard = ({
         </div>
         {/* <button className="bg-white text-black border border-black p-2 mt-2 rounded-lg">Add to Cart</button> */}
       </div>
-    </div>
+    </section>
   );
 };
 
