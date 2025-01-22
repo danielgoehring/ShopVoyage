@@ -84,7 +84,23 @@ body {
 
 @media (max-width: 416px) {
   #track-order {
-    font-size: 8px;
+    font-size: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  #order-status {
+    font-size: 10px;
+  }
+
+  #quantity {
+    font-size: 10px;
+  }
+
+  #size {
+    font-size: 10px;
   }
 }
 

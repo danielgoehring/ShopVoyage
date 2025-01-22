@@ -57,8 +57,12 @@ const Orders = () => {
                   <p className="text-gray-600 font-semibold">
                     ${item.productCartPrice}
                   </p>
-                  <p className="text-sm">Quantity: {item.inputValue}</p>
-                  <p className="text-sm">Size: {item.size}</p>
+                  <p id="quantity" className="text-sm">
+                    Quantity: {item.inputValue}
+                  </p>
+                  <p id="size" className="text-sm">
+                    Size: {item.size}
+                  </p>
                 </div>
                 <p className="text-gray-500 text-sm">
                   Date: {orderDetails.orderDate}
@@ -77,7 +81,7 @@ const Orders = () => {
                 >
                   <circle cx="8" cy="8" r="8" />
                 </svg>
-                <div>{orderDetails.status}</div>
+                <div id="order-status">{orderDetails.status}</div>
               </span>
               <button
                 id="track-order"
